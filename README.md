@@ -23,3 +23,15 @@ npm run dev // or yarn dev
 to spin up the development server.
 Then, go to [](http://localhost:5173/) to see the demo app running.
 
+## Test
+
+Unit tests are ara available when running the following command:
+```sh
+npm t // or npm test or yarn test
+```
+### Coverage
+It is also possible to generate a local report with coverage information. It also shows the report on CLI when running the following command:
+
+```sh
+npm run test:coverage // or yarn test:coverage
+```
