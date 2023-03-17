@@ -35,3 +35,45 @@ It is also possible to generate a local report with coverage information. It als
 ```sh
 npm run test:coverage // or yarn test:coverage
 ```
+
+## Library Interface
+
+### Creating a Scoreboard
+To create a new Scoreboard, simply create a new instance of the Scoreboard class:
+
+```typescript
+import Scoreboard from '../lib/football-world-cup';
+
+const scoreboard = new Scoreboard();
+```
+
+### Starting a Game
+To start a new game, call the startGame method on the Scoreboard instance, passing in the names of the home and away teams:
+
+```typescript
+scoreboard.startGame('Home Team', 'Away Team');
+```
+
+### Updating a Game Score
+To update the score of a game, call the updateGame method on the Scoreboard instance, passing in the names of the home and away teams and the new scores:
+
+```typescript
+scoreboard.updateGame('Home Team Name', 'Away Team Name', 2, 1);
+```
+
+
+### Finishing a Game
+To finish a game, call the finishGame method on the Scoreboard instance, passing in the game instance:
+
+```typescript
+scoreboard.finishGame('Home Team Name', 'Away Team Name');
+```
+
+### Getting a Summary of Games
+To get a summary of games by total score, call the getGamesByTotalScore method on the Scoreboard instance:
+
+```typescript
+const gamesSummary = scoreboard.getGamesByTotalScore();
+console.log(gamesSummary);
+```
+The getGamesByTotalScore method returns an array of Game instances, sorted by total score (in descending order) and then by the time they were added to the scoreboard (in descending order).
