@@ -36,6 +36,8 @@ It is also possible to generate a local report with coverage information. It als
 npm run test:coverage // or yarn test:coverage
 ```
 
+![Coverage status for Scoreboard library](public/coverage.png)
+
 ## Library Interface
 
 ### Creating a Scoreboard
