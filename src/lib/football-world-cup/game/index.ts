@@ -4,11 +4,17 @@ export default class Game {
   private createdTime: Date;
   private homeTeam: Team;
   private awayTeam: Team;
+  private id: number;
 
-  constructor(homeTeamName: string, awayTeamName: string) {
+  constructor(id: number, homeTeamName: string, awayTeamName: string) {
+    this.id = id;
     this.createdTime = new Date();
     this.homeTeam = new Team(homeTeamName);
     this.awayTeam = new Team(awayTeamName);
+  }
+
+  getId(): number {
+    return this.id;
   }
 
   getHomeTeamName(): string {
