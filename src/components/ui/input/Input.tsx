@@ -2,7 +2,7 @@ interface Props {
   placeholder: string;
   handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
   value: string;
-  type: string;
+  type?: string;
 }
 
 const TextInput: React.FC<Props> = ({
