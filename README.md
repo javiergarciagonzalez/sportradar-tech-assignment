@@ -23,6 +23,10 @@ npm run dev // or yarn dev
 to spin up the development server.
 Then, go to [](http://localhost:5173/) to see the demo app running.
 
+You will see a screen similar to:
+
+![ui screenshot](public/ui.png)
+
 ## Test
 
 Unit tests are ara available when running the following command:
@@ -37,6 +41,12 @@ npm run test:coverage // or yarn test:coverage
 ```
 
 ![Coverage status for Scoreboard library](public/coverage.png)
+
+## ⚠️⚠️⚠️ Decisions and assumptions
+
+- I decided **to write a very simple React App** that shows how to interact with `Scoreboard` library.
+- I did not **write tests for UI components** since the React app was **a little bit out of scope** for this assignment. However, I installed `React testing/library` to show that I would use it in case I would have tested UI React components.
+- I did not follow a TDD approach when commiting new changes for the React app because of the same reason, since it was out of scope, I focused on keeping the quality on the library `Scoreboard`.
 
 ## Library Interface
 
