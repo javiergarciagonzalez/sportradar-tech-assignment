@@ -21,13 +21,15 @@ export default class Scoreboard {
     return this.toPublic(newGame);
   }
 
-  finishGame(gameId: number): void {
+  finishGame(gameId: number): PublicGame[] {
     const game = this.getGameById(gameId);
 
     const index = this.games.indexOf(game);
     if (index !== -1) {
       this.games.splice(index, 1);
     }
+
+    return this.getGames();
   }
 
   updateGame(

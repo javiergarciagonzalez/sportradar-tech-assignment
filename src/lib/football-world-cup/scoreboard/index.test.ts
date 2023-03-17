@@ -24,10 +24,8 @@ describe("Scoreboard tests", () => {
       HOME_GAME_NAME,
       AWAY_GAME_NAME
     );
-    scoreboard.finishGame(gameId);
-    expect(
-      scoreboard.getGames().find((game) => game.id === gameId)
-    ).toBeUndefined();
+    const remainingGames = scoreboard.finishGame(gameId);
+    expect(remainingGames.find((game) => game.id === gameId)).toBeUndefined();
   });
 
   test("finishGame throws an error if game doesn't exist", () => {
