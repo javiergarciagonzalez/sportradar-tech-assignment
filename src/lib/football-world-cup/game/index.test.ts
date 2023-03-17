@@ -3,11 +3,15 @@ import Game from "../game";
 const HOME_TEAM_NAME = "Home Team";
 const AWAY_TEAM_NAME = "Away Team";
 
+const getRandomInt: () => number = () => {
+  return new Date().getTime() * 12345;
+};
+
 describe("Game tests", () => {
   let game: Game;
 
   beforeEach(() => {
-    game = new Game(HOME_TEAM_NAME, AWAY_TEAM_NAME);
+    game = new Game(getRandomInt(), HOME_TEAM_NAME, AWAY_TEAM_NAME);
   });
 
   test("should return the correct home team name", () => {
