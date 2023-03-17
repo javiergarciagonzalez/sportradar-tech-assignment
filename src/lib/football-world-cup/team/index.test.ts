@@ -21,8 +21,9 @@ describe("Team", () => {
   });
 
   test("should be able to update the score", () => {
-    team.updateScore(3);
+    const updatedScore = team.updateScore(3);
     expect(team.getScore()).toBe(3);
+    expect(updatedScore).toBe(3);
     team.updateScore(2);
     expect(team.getScore()).toBe(2);
   });

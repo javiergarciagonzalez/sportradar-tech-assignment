@@ -10,12 +10,14 @@ export default class Team {
   getName(): string {
     return this.name;
   }
-  
+
   getScore(): number {
     return this.score;
   }
 
-  updateScore(score: number): void {
-    this.score = score
+  updateScore(score: number): number {
+    this.score = score;
+
+    return this.score;
   }
 }
