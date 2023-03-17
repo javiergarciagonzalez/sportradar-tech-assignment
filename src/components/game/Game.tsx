@@ -20,17 +20,19 @@ const Game: FC<Props> = ({ game }) => {
     <li>
       <span>{game.text}</span>
       {!isUpdaterVisible && (
-        <Button
-          style={{ marginLeft: "40px" }}
-          onClick={() => setIsUpdaterVisible(!isUpdaterVisible)}
-        >
-          Update Game
-        </Button>
+        <>
+          <Button
+            style={{ marginLeft: "40px" }}
+            onClick={() => setIsUpdaterVisible(!isUpdaterVisible)}
+          >
+            Update Game
+          </Button>
+          <Button onClick={finishGame}>Finish Game</Button>
+        </>
       )}
       {isUpdaterVisible && (
         <Updater game={game} setIsUpdaterVisible={setIsUpdaterVisible} />
       )}
-      <Button onClick={finishGame}>Finish Game</Button>
     </li>
   );
 };
