@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Dispatch, SetStateAction, createContext, useState } from "react";
+
+import Scoreboard from "./lib/football-world-cup";
+import { PublicGame } from "./lib/football-world-cup/scoreboard";
+
+import List from "./components/list";
+import Form from "./components/ui/form/Form";
+
+import "./App.css";
+
+export type StoreType = {
+  scoreboard: Scoreboard;
+  setGames: Dispatch<SetStateAction<PublicGame[]>>;
+};
+
+const initialState: StoreType = {
+  scoreboard: new Scoreboard(),
+  setGames: () => {},
+};
+
+export const AppContext = createContext<StoreType>({
+  ...initialState,
+});
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [games, setGames] = useState<PublicGame[]>([]);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <AppContext.Provider value={{ ...initialState, setGames }}>
+      <main>
+        <List games={games} />
+        <Form />
+      </main>
+    </AppContext.Provider>
+  );
 }
 
-export default App
+export default App;
