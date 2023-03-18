@@ -22,6 +22,14 @@ describe("Game tests", () => {
     expect(game.getAwayTeamName()).toBe(AWAY_TEAM_NAME);
   });
 
+  test("should return the correct home team score", () => {
+    expect(game.getHomeTeamScore()).toBe(0);
+  });
+
+  test("should return the correct away team score", () => {
+    expect(game.getAwayTeamScore()).toBe(0);
+  });
+
   test("should update the score correctly", () => {
     game.updateScore(2, 1);
     expect(game.getBeautifiedGameScore()).toBe(

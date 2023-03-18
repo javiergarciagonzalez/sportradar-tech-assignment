@@ -64,14 +64,20 @@ describe("Scoreboard tests", () => {
       {
         id: 2,
         text: "Home2 2 - 2 Away2",
+        homeTeamScore: 2,
+        awayTeamScore: 2,
       },
       {
         id: 1,
         text: "Home1 1 - 0 Away1",
+        homeTeamScore: 1,
+        awayTeamScore: 0,
       },
       {
         id: 3,
         text: "Home3 0 - 1 Away3",
+        homeTeamScore: 0,
+        awayTeamScore: 1,
       },
     ];
 
