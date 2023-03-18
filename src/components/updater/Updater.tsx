@@ -36,7 +36,6 @@ const Updater: FC<Props> = ({ game, setIsUpdaterVisible }) => {
       return;
     }
 
-    debugger;
     scoreboard.updateGame(game.id, homeTeamScore, awayTeamScore);
 
     setGames(scoreboard.getGames());

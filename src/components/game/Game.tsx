@@ -15,7 +15,6 @@ const Game: FC<Props> = ({ game }) => {
     scoreboard.finishGame(game.id);
     setGames(scoreboard.getGames());
   };
-  debugger;
   return (
     <li>
       <span>{game.text}</span>
