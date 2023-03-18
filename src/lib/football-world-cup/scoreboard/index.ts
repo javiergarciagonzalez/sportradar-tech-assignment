@@ -3,6 +3,8 @@ import Game from "../game";
 export interface PublicGame {
   id: number;
   text: string;
+  homeTeamScore: number;
+  awayTeamScore: number;
 }
 
 export default class Scoreboard {
@@ -72,6 +74,8 @@ export default class Scoreboard {
     return {
       id: game.getId(),
       text: game.getBeautifiedGameScore(),
+      homeTeamScore: game.getHomeTeamScore(),
+      awayTeamScore: game.getAwayTeamScore(),
     };
   }
 }

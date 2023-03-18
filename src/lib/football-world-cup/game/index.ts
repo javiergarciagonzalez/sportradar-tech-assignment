@@ -25,6 +25,13 @@ export default class Game {
     return this.awayTeam.getName();
   }
 
+  getHomeTeamScore(): number {
+    return this.homeTeam.getScore();
+  }
+  getAwayTeamScore(): number {
+    return this.awayTeam.getScore();
+  }
+
   updateScore(homeTeamScore: number, awayTeamScore: number): void {
     this.homeTeam.updateScore(homeTeamScore);
     this.awayTeam.updateScore(awayTeamScore);

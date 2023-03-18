@@ -21,8 +21,12 @@ interface Props {
 const Updater: FC<Props> = ({ game, setIsUpdaterVisible }) => {
   const { scoreboard, setGames } = useContext(AppContext);
 
-  const [homeTeamScore, setHomeTeamScore] = useState<number>(0);
-  const [awayTeamScore, setAwayTeamScore] = useState<number>(0);
+  const [homeTeamScore, setHomeTeamScore] = useState<number>(
+    game.homeTeamScore
+  );
+  const [awayTeamScore, setAwayTeamScore] = useState<number>(
+    game.awayTeamScore
+  );
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -36,8 +40,6 @@ const Updater: FC<Props> = ({ game, setIsUpdaterVisible }) => {
     scoreboard.updateGame(game.id, homeTeamScore, awayTeamScore);
 
     setGames(scoreboard.getGames());
-    setHomeTeamScore(0);
-    setAwayTeamScore(0);
   };
 
   const handleHomeTeamChange = (event: React.FormEvent<HTMLInputElement>) => {
